@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Nicolas BAËLE</title>
+		<link rel="shortcut icon" href="Ressources/Images/Icon/favicon.ico">
+		<meta charset="utf-8">
+		<link href="Ressources/CSS_JS/CSS.css" rel="stylesheet">
+		<script type="text/javascript" src="Ressources/CSS_JS/JavaScript.js"></script>
+		<script type="text/javascript" src="Ressources/CSS_JS/vanilla-tilt.js"></script>
+	</head>
+	<body>
+		<menu id="menu">
+			<h3 class ="nom" id="nom"><span>Nicolas</span> <span>BAELE</span></h3>
+			<div class="divMenu" id="divMenu_mobile">
+				<button onclick="change_color_menu_apropos()" class="button" class="itemMenu">
+					<div id="divAPropos">
+						<a href="#titreAPropos" id="itemMenu">
+							<span id="apropos">à propos de moi</span>
+						</a>
+					</div>
+				</button>
+				<button onclick="change_color_menu_cv()" class="button">
+					<div id="divCV">
+						<a href="#titreCV" class="itemMenu">
+							<span id="cv">curriculum vitae</span>
+						</a>
+					</div>
+				</button>
+				<button onclick="change_color_menu_projets()" class="button">
+					<div id="divProjets">
+						<a href="#titreProjets" class="itemMenu">
+							<span id="projets">projets</span>
+						</a>
+					</div>
+				</button>
+				<button onclick="change_color_menu_contact()" class="button">
+					<div id="divContact">
+						<a href="#titreContact" class="itemMenu">
+							<span id="contact">contact</span>
+						</a>
+					</div>
+				</button>
+				<button  id="boutonSpecial">
+				<div class="itemMenu" id="divBouton">
+					<button class="light-mode-button" onclick="toggle_light_mode()">
+						<span></span>
+						<span></span>
+					</button> 
+				</div>
+				</button>
+			</div>
+			<div class="menu_mobile" id="bouton_mobile">
+				<div class="menu_mobile_line"></div>
+				<div class="menu_mobile_line"></div>
+				<div class="menu_mobile_line"></div>
+			</div>
+			<script>
+				const bouton_mobile = document.getElementById('bouton_mobile');
+				const div_mobile = document.getElementById('divMenu_mobile');
+				const nom_mobile = document.getElementById('nom');
+
+				bouton_mobile.addEventListener('click', () => {
+					nom_mobile.classList.toggle('activeNom');
+					div_mobile.classList.toggle('activeDiv');
+				})
+			</script>
+		</menu>
+		<menu id="paragraphePrincipal">
+			<h2 id="premier"><span id="titreAPropos"></span>&Agrave; PROPOS</h2>
+			<div class="paragraphe">
+				<div class="divPhoto">
+					<img src="Ressources/Images/photo.jpg" type="jpg" id="photoAPropos">
+				</div>
+				<div class="contenu">
+					Etudiant en DUT Informatique en Année Spéciale après avoir réussis un DUT Génie Electrique et Informatique Industrielle.
+					 Guitariste à mes heures perdues et passionné de moto depuis toujours, je suis à la recherche d'un stage de dix de semaines en juin 2022.
+					 J'ai plusieurs expériences dans le monde
+					du travail, notemment de nuit ou encore pendant le confinement.
+				</div>
+			</div>	
+			<h2><span id="titreCV"></span>CURRICULUM VITAE</h2>
+			<div class="paragraphe">
+				<div class="contenu contenuCV">
+					<div>
+						Etudiant en DUT Informatique AS après une Licence PRO MECSE théoriquement validée, un DUT GEII et un BAC S.
+						 Je travaille quasiment tous les ans depuis mes 16 ans dans plusieurs entreprises,
+						 par exemple dans un magasin de ma ville pendant 5 mois pendant le confinement,
+						ou 5 mois de nuit en intérim chez un gros distributeur pharmaceutique.	
+						<br>
+						<br>
+					</div>
+					<div id="competences">
+							<div class="competencesBox"><strong>C/C++ :</strong><progress value="90" max="100"></progress></div>
+							<div class="competencesBox"><strong>Python :</strong><progress value="90" max="100"></progress></div>
+							<div class="competencesBox"><strong>HTML/CSS :</strong><progress value="75" max="100"></progress></div>
+							<div class="competencesBox"><strong>JavaScript :</strong><progress value="60" max="100"></progress></div>
+							<div class="competencesBox"><strong>Bash/Shell :</strong><progress value="60" max="100"></progress></div>
+							<div class="competencesBox"><strong>Automatisme :</strong><progress value="40" max="100"></progress></div>
+							<div class="competencesBox"><strong>&#201;lectronique :</strong><progress value="25" max="100"></progress></div>
+							<div class="competencesBox"><strong>Supervision :</strong><progress value="20" max="100"></progress></div>
+					</div>
+				</div>
+				<div class="divPhoto">
+					<a href="Ressources/BAELE_Nicolas_CV_2021-2022.pdf" target="_blank"><img src="Ressources/Images/cv.png" type="png" id="photoCV"><br>télécharger</a>
+				</div>
+				<script type="text/javascript">
+				VanillaTilt.init(document.querySelectorAll(".divPhoto"), {
+						max: 15,
+						speed: 5000
+					});
+				</script>
+			</div>
+			<h2><span id="titreProjets"></span>PROJETS</h2>
+			<div class="container1">
+				<div class="containerCard">
+					<div class="card" id="card1">
+							<div class="content">
+								<h4>Jeu PONG</h4>
+								<p>Cliquez pour en savoir plus <span class="fleche">&#10140;</span></p>
+							</div>
+							<div class="contentVoirPlus1">
+								<h4>Jeu PONG</h4>
+								<p>Réalisation d'un jeu sous processing inspiré du PONG avec des potails modificateurs de vitesse et en solo.
+									<br>Créé en DUT GEII première année.
+								</p>
+							</div>
+						<img src="Ressources/Images/pong.png" type="png">
+					</div>
+					<a class="lien1" id="lien1" href="Ressources/Projets/Projets_en_pdf/PONG.pdf" target="_blank">télécharger</a>
+					<h5 onclick="projet1()" class="voirPlus1" id="voirPlus1">+</h5>
+				</div>
+				<div class="containerCard">
+					<div class="card" id="card2">
+							<div class="content">
+								<h4>Robot Autonome</h4>
+								<p>Cliquez pour en savoir plus <span class="fleche">&#10140;</span></p>
+							</div>
+							<div class="contentVoirPlus2">
+								<h4>Robot Autonome</h4>
+								<p>Programmation d'une carte Nucléo branchée sur un robot voiture avec des capteurs infrarouges et ultrasons pour lui permettre
+									 de se déplacer tout seul. &#201;quipé notemment d'une carte Bluetooth qui permet de le faire se déplacer avec son smartphone.
+									 <br>Créé en DUT GEII deuxième année.
+								</p>
+							</div>
+						<img src="Ressources/Images/robot_autonome.png" type="png" class="droite">
+					</div>
+					<a class="lien2" id="lien2" href="Ressources/Projets/Projets_en_pdf/Robot_Autonome_Bluetooth.pdf" target="_blank">télécharger</a>
+					<h5 onclick="projet2()" class="voirPlus2" id="voirPlus2">+</h5>
+				</div>
+			</div>
+			<div class="container2">
+				<div class="containerCard">
+					<div class="card" id="card3">
+							<div class="content">
+								<h4>Flyer Anglais</h4>
+								<p>Cliquez pour en savoir plus <span class="fleche">&#10140;</span></p>
+							</div>
+							<div class="contentVoirPlus3">
+								<h4>Flyer Anglais</h4>
+								<p>Réalisation d'un flyer en anglais pour promouvoir le DUT GEII et sa possibilitée de formation d'un semestre à l'étranger
+									 distribués lors des journées portes ouvertes.
+									 Premier prix pour le concours du meilleur flyer de la promotion.
+									 <br>Créé en DUT GEII deuxième année.
+								</p>
+							</div>
+						<img src="Ressources/Images/flyer_anglais.png" type="png">
+					</div>
+					<a class="lien3" id="lien3" href="Ressources/Projets/Projets_en_pdf/Flyer_presentation_DUT_GEII.pdf" target="_blank">télécharger</a>
+					<h5 onclick="projet3()" class="voirPlus3" id="voirPlus3">+</h5>
+				</div>
+				<div class="containerCard" id="containerCard">
+					<div class="card" id="card4">
+							<div class="content">
+								<h4>Gradateur de Lumière</h4>
+								<p>Cliquez pour en savoir plus <span class="fleche">&#10140;</span></p>
+							</div>
+							<div class="contentVoirPlus4">
+								<h4>Gradateur de Lumière</h4>
+								<p>Conception et réalisation technique d'un gradateur de lumière qui permet de régler l'intensité lumineuse d'une ampoule
+									 grâce à un sifflement. Selon la fréquence de ce sifflement, on peut augmenter ou diminuer son intensité. 
+									 <br>Créé en DUT GEII première année.
+								</p>
+							</div>
+						<img src="Ressources/Images/gradateur_de_lumiere.png" type="png" class="droite">
+					</div>
+					<a class="lien4" id="lien4" href="Ressources/Projets/Projets_en_pdf/Gradateur_de_lumière_sonore.pdf" target="_blank">télécharger</a>
+					<h5 onclick="projet4()" class="voirPlus4" id="voirPlus4">+</h5>
+				</div>
+			</div>
+			<div class="container1">
+				<div class="containerCard">
+					<div class="card" id="card5">
+							<div class="content">
+								<h4>Enregistreur Sonore</h4>
+								<p>Cliquez pour en savoir plus <span class="fleche">&#10140;</span></p>
+							</div>
+							<div class="contentVoirPlus5">
+								<h4>Enregistreur Sonore</h4>
+								<p>Conception et réalisation d'un enregistreur sonore, qui permet d'engeristrer un message court avec une conversion analogique-numérique
+									 puis une conversion numérique-analogique pour émettre le message enregistré.
+									 <br>Créé en DUT GEII deuxième année année.
+								</p>
+							</div>
+						<img src="Ressources/Images/enregistreur_sonore.png" type="png">
+					</div>
+					<a class="lien5" id="lien5" href="Ressources/Projets/Projets_en_pdf/Enregistreur_vocal.pdf" target="_blank">télécharger</a>
+					<h5 onclick="projet5()" class="voirPlus5" id="voirPlus5">+</h5>
+				</div>
+				<div class="containerCard">
+					<div class="card" id="card6">
+							<div class="content">
+								<h4>Signaux Triangulaires</h4>
+								<p>Cliquez pour en savoir plus <span class="fleche">&#10140;</span></p>
+							</div>
+							<div class="contentVoirPlus6">
+								<h4>Signaux Triangulaires</h4>
+								<p>Utilisation de plusieurs signaux triangulaires avec des fréquences bien définies pour construire un signal sinusïdal sur un oscilloscope
+									 <br>Créé en Licence PRO MECSE.
+								</p>
+							</div>
+						<img src="Ressources/Images/sinusoide.png" type="png" class="droite">
+					</div>
+					<a class="lien6" id="lien6" href="Ressources/Projets/Projets_en_pdf/Sinusoïde_signaux_triangulaires.pdf" target="_blank">télécharger</a>
+					<h5 onclick="projet6()" class="voirPlus6" id="voirPlus6">+</h5>
+				</div>
+			</div>
+			<div class="container2">
+				<div class="containerCard">
+					<div class="card" id="card7">
+							<div class="content">
+								<h4>Mesure d'un Moteur</h4>
+								<p>Cliquez pour en savoir plus <span class="fleche">&#10140;</span></p>
+							</div>
+							<div class="contentVoirPlus7">
+								<h4>Mesure d'un Moteur</h4>
+								<p>Mise en oeuvre d'une méthode pour mesurer le vitesse d'un moteur à partir d'un capteur optique.
+									 <br>Créé en License PRO MECSE.
+								</p>
+							</div>
+						<img src="Ressources/Images/calul_vitesse_moteur.png" type="png">
+					</div>
+					<a class="lien7" id="lien7" href="Ressources/Projets/Projets_en_pdf/Mesure_vitesse_moteur.pdf" target="_blank">télécharger</a>
+					<h5 onclick="projet7()" class="voirPlus7" id="voirPlus7">+</h5>
+				</div>
+				<div class="containerCard" id="containerCard">
+					<div class="card" id="card8">
+							<div class="content">
+								<h4>Supervision d'un Ascenceur</h4>
+								<p>Cliquez pour en savoir plus <span class="fleche">&#10140;</span></p>
+							</div>
+							<div class="contentVoirPlus8">
+								<h4>Supervision d'un Ascenceur</h4>
+								<p>Après avoir créé le programme qui permet l'automatisation d'un ascenseur sur 3 étages. Ce projet consistait à superviser
+									 cet ascenseur pour le gérer et permettre la mise en place d'une maintenance.
+									 <br>Créé en DUT GEII deuxième année.
+									</p>
+							</div>
+						<img src="Ressources/Images/ascenseur.png" type="png" class="droite">
+					</div>
+					<a class="lien8" id="lien8" href="Ressources/Projets/Projets_en_pdf/Supervision_ascenseur.pdf" target="_blank">télécharger</a>
+					<h5 onclick="projet8()" class="voirPlus8" id="voirPlus8">+</h5>
+				</div>
+			</div>
+			<div class="container1">
+				<div class="containerCard">
+					<div class="card" id="card9">
+							<div class="content">
+								<h4>Gestion des Processus</h4>
+								<p>Cliquez pour en savoir plus <span class="fleche">&#10140;</span></p>
+							</div>
+							<div class="contentVoirPlus9">
+								<h4>Gestion des Processus</h4>
+								<p>&#201;criture de scripts bash pour comprendre la gestion et la création des processus sous Linux avec utilisation
+									 de boucles while.
+									 <br>Créé en Licence PRO MECSE.
+								</p>
+							</div>
+						<img src="Ressources/Images/processus_linux.png" type="jpg">
+					</div>
+					<a class="lien9" id="lien9" href="Ressources/Projets/Projets_en_pdf/Gestion_processus_Linux.pdf" target="_blank">télécharger</a>
+					<h5 onclick="projet9()" class="voirPlus9" id="voirPlus9">+</h5>
+				</div>
+				<div class="containerCard">
+					<div class="card" id="card10">
+							<div class="content">
+								<h4>Portfolio</h4>
+								<p>Cliquez pour en savoir plus <span class="fleche">&#10140;</span></p>
+							</div>
+							<div class="contentVoirPlus10">
+								<h4>Portfolio</h4>
+								<p>Création de ce portfolio en HTML/CSS avec une petite partie de JavaScript.
+									 <br>Créé en DUT Informatique AS.
+								</p>
+							</div>
+						<img src="Ressources/Images/html_css_js.png" type="jpg" class="droite">
+					</div>
+					<a class="lien10" id="lien10" href="#" target="_blank">télécharger</a>
+					<h5 onclick="projet10()" class="voirPlus10" id="voirPlus10">+</h5>
+				</div>
+			</div>
+		</menu>	
+		<div class="cube1">
+			<div class="top1"></div>
+			<div>
+				<span style="--i:0;"></span>
+				<span style="--i:1;"></span>
+				<span style="--i:2;"></span>
+				<span style="--i:3;"></span>
+			</div>
+		</div>
+		<div class="cube2">
+			<div class="top2"></div>
+			<div>
+				<span style="--i:0;"></span>
+				<span style="--i:1;"></span>
+				<span style="--i:2;"></span>
+				<span style="--i:3;"></span>
+			</div>
+		</div>
+		<div class="cube3">
+			<div class="top3"></div>
+			<div>
+				<span style="--i:0;"></span>
+				<span style="--i:1;"></span>
+				<span style="--i:2;"></span>
+				<span style="--i:3;"></span>
+			</div>
+		</div>
+		<footer id="titreContact">
+			&copy; Nicolas BAELE
+			<div>
+				<a href="https://www.linkedin.com/in/nicolas-ba%C3%ABle-046a23182/"><img src="https://img.icons8.com/color/48/000000/linkedin.png"/></a>
+				<a href="mailto:nicolas.baele@orange.fr?subject=Offre de stage"><img src="https://img.icons8.com/color/48/000000/gmail-new.png"/></a><span>nicolas.baele@orange.fr</span>
+				<a href="https://www.instagram.com/_nicolasbaele/"><img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png"/></a>
+			</div>
+		</footer>
+	</body>
+</html>
